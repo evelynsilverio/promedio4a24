@@ -40,12 +40,19 @@ public class PromedioGrupo {
         }
     }
 
+    public static void imprimirAlumnos() {
+        System.out.println("Contenido del arreglo alumnos: ");
+        for(Alumno a : alumnos){
+            System.out.println("-----------------------------------------");
+            System.out.println("Información del alumno: ");
+            System.out.println(a.toString());
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         int n; //tamaño del grupo
 
-        // double[] calificaciones; //calificaciones de cada alumno
-        // double suma = 0; //para sumar calificaciones
-        // double promedio; //el promedio del grupo
+        double promedio; //el promedio del grupo
 
         System.out.println("Programa que calcula el promedio de un grupo");
         System.out.println("--------------------------------------------");
@@ -56,16 +63,11 @@ public class PromedioGrupo {
 
         //Construir el arreglo alumnos
         alumnos = new Alumno[n];
+        //Introducir información d elos alumnos
+        leerAlumnos();
+        //Mostrar la información
+        imprimirAlumnos();
 
-        // calificaciones = new double[n];//Construcción del arreglo
-
-        //Pedir cada calificación y acumularla
-        // for (int i = 0; i < calificaciones.length; i++){
-        //     System.out.println("Escribe la calificación del estudiante [" + (i+1) + "]:");
-        //     entrada = bufer.readLine();
-        //     calificaciones[i]= Double.parseDouble(entrada);
-        //     suma += calificaciones[i];
-        // }
         //Obtener el promedio
         // promedio = suma / n;
 
